@@ -19,9 +19,9 @@ use App\User;
     //return "All Done";
 //});
 
-//$router->get('/' , function () use ($router) {
-    //return $router->app->version();
-//});
+$router->get('/' , function () use ($router) {
+    return $router->app->version();
+});
 
 //Users (Business & IT Personnel)
 $router->group(['prefix' => 'api'], function () use ($router) {
