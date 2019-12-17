@@ -28,21 +28,23 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 
    $router->get('users/',  ['uses' => 'UserController@showAllUsers']);
    $router->post('users/', ['uses' => 'UserController@create']);
+   $router->get('users/{id}', ['uses' => 'UserController@showOneUser']);
+   $router->put('users/{id}', ['uses' => 'UserController@update']);
 
-   // THIS IS THE ROUTE FOR THE PROFILE
-   $router->get('users/profile',  ['uses' => 'UserController@showAllUsers']);
-   $router->get('users/profile/{id}', ['uses' => 'UserController@showOneUser']);
+  //  // THIS IS THE ROUTE FOR THE PROFILE
+  //  $router->get('users/profile',  ['uses' => 'UserController@showAllUsers']);
+  //  $router->get('users/profile/{id}', ['uses' => 'UserController@showOneUser']);
    
-   //THIS IS THE ROUTE FOR THE SIGN IN
-   $router->post('users/sign-up', ['uses' => 'UserController@create']);
-   $router->post('users/', ['uses' => 'UserController@create']);
+  //  //THIS IS THE ROUTE FOR THE SIGN IN
+  //  $router->post('users/sign-up', ['uses' => 'UserController@create']);
+  //  $router->post('users/', ['uses' => 'UserController@create']);
 
-   // login Route
-   $router->get('users/login',  ['uses' => 'UserController@showAllUsers']);
-   $router->get('users/login/{id}', ['uses' => 'UserController@showOneUser']);
+  //  // login Route
+  //  $router->get('users/login',  ['uses' => 'UserController@showAllUsers']);
+  //  $router->get('users/login/{id}', ['uses' => 'UserController@showOneUser']);
 
    //setting update Route
-   $router->put('users/{id}', ['uses' => 'UserController@update']);
+ 
    
     
    
