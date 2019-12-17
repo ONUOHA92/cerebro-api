@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
 
-    public function construct()
-    {
-         $this->middleware('auth');
-    }
+    // public function construct()
+    // {
+    //      $this->middleware('auth');
+    // }
 
     public function profile()
     {
