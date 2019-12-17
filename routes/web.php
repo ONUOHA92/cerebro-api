@@ -70,24 +70,44 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 //     Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserController@update']);
   });
 
-
-//   //Users (IT Personnel)
-// $router->group(['prefix' => 'api'], function () use ($router) {
-
-//     $router->get('users',  ['uses' => 'UserController@showAllUsers']);
-
-//     $router->post('users/', ['uses' => 'UserController@create']);
-    
-//     $router->get('users/{id}', ['uses' => 'UserController@showOneUser']);
-
-//     $router->put('users/{id}', ['uses' => 'UserController@update']);
-//     //Route::patch('users/{user}/update',  ['as' => 'users.update', 'uses' => 'UserController@update']);
-//   });
+ //Api registration
+  $router->group(['prefix' => 'api'], function () use ($router) {
+    // Matches "/api/register
+    $router->post('register', 'AuthController@register');
+ 
+ });
 
 
-  //Program (onsite | design | maintenance)
+
+ // API route group
+$router->group(['prefix' => 'api'], function () use ($router) {
+  // Matches "/api/register
+ $router->post('register', 'AuthController@register');
+
+   // Matches "/api/login
+  $router->post('login', 'AuthController@login');
+});
+
+  
 
 
+  // API route group
+  $router->group(['prefix' => 'api'], function () use ($router) {
+      // Matches "/api/register
+     $router->post('register', 'AuthController@register');
+       // Matches "/api/login
+      $router->post('login', 'AuthController@login');
+  
+      // Matches "/api/profile
+      $router->get('profile', 'UserController@profile');
+  
+      // Matches "/api/users/1 
+      //get one user by id
+      $router->get('users/{id}', 'UserController@singleUser');
+  
+      // Matches "/api/users
+      $router->get('users', 'UserController@allUsers');
+  });
 
 //   Program (Onsite worker)
 // $router->group(['prefix' => 'api'], function () use ($router) {

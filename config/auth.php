@@ -7,7 +7,7 @@
     
         'guards' => [
             'api' => [
-                'driver' => 'passport',
+                'driver' => 'jwt',
                 'provider' => 'users',
             ],
         ],

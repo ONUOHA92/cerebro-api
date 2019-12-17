@@ -84,7 +84,7 @@ $app->register(App\Providers\EventServiceProvider::class);
 // $app->register(Laravel\Passport\PassportServiceProvider::class);
 // $app->register(Dusterio\LumenPassport\PassportServiceProvider::class);
 // Dusterio\LumenPassport\LumenPassport::routes($app);
-
+$app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes
