@@ -25,21 +25,13 @@ class UserController extends Controller
         return response()->json($user, 201);
     }
 
-    // public function update($id, Request $request)
-    // {
-    //     $user = User::findOrFail($id);
-    //     $user->update($user->all());
+     public function update($id, Request $request)
+     {
+        $user = User::findOrFail($id);
+        $user->update($user->all());
 
-    //     return response()->json($user, 200);
-    // }
-
-    public function update($id, Request $request)
-{ 
-    $user = User::findOrFail($id);
-    $user->update($request->all());
-    // Flash::message('Your account has been updated!');
-    return response()->json('Updated succesfully', 200);
-}
+        return response()->json($user, 200);
+     }
 
     public function delete($id)
     {
