@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
 
+    public function construct()
+    {
+         $this->middleware('auth');
+    }
+
+    public function profile()
+    {
+        return response()->json(['user' => Auth::user()], 200);
+    }
+
      public function showAllUsers()
      {
         return response()->json(User::all());
